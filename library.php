@@ -28,7 +28,7 @@ function fillTable($sortType='ASC', $sortTarget='books.book_name'){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
                 echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search..."/>';
+                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book..."/>';
                 echo '<input class="submit" type="submit">';
                 echo "</form>";
                 // Create an HTML table
@@ -65,7 +65,7 @@ function fillTable($sortType='ASC', $sortTarget='books.book_name'){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
                 echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search..."/>';
+                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book or Author..."/>';
                 echo '<input class="submit" type="submit">';
                 echo "</form>";
                 // Create an HTML table
@@ -206,7 +206,7 @@ function searchResults($searchVal){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
                 echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search..."/>';
+                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book..."/>';
                 echo '<input class="submit" type="submit">';
                 echo "</form>";
                 // Create an HTML table
@@ -249,7 +249,7 @@ function searchResults($searchVal){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
                 echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search..."/>';
+                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book or Author..."/>';
                 echo '<input class="submit" type="submit">';
                 echo "</form>";
                 // Create an HTML table
