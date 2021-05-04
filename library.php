@@ -27,18 +27,14 @@ function fillTable($sortType='ASC', $sortTarget='books.book_name'){
         if($result){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
-                echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book..."/>';
-                echo '<input class="submit" type="submit">';
-                echo "</form>";
                 // Create an HTML table
                 echo "<table>";
                 echo "<tr>";
                     // Dispay the column names
-                    echo "<td>Book Name</td>";
-                    echo "<td>Year</td>";
-                    echo "<td>Genre</td>";
-                    echo "<td>Age Group</td>";
+                    echo "<th>Book Name</th>";
+                    echo "<th>Year</th>";
+                    echo "<th>Genre</th>";
+                    echo "<th>Age Group</th>";
                     echo "</tr>";
                 while($row = $result->fetch_assoc()) {// Loop through the columns array
                     echo "<tr>";
@@ -64,20 +60,16 @@ function fillTable($sortType='ASC', $sortTarget='books.book_name'){
         if($result){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
-                echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book or Author..."/>';
-                echo '<input class="submit" type="submit">';
-                echo "</form>";
                 // Create an HTML table
                 echo "<table>";
                 echo "<tr>";
                 // Display the column names
-                echo "<td>Book Name</td>";
-                echo "<td>Year</td>";
-                echo "<td>Genre</td>";
-                echo "<td>Age Group</td>";
-                echo "<td>Author</td>";
-                echo "<td>Author Age</td>";
+                echo "<th>Book Name</th>";
+                echo "<th>Year</th>";
+                echo "<th>Genre</th>";
+                echo "<th>Age Group</th>";
+                echo "<th>Author</th>";
+                echo "<th>Author Age</th>";
                 echo "</tr>";
                 
                 echo "<form method='post' action=''>";
@@ -205,18 +197,14 @@ function searchResults($searchVal){
         if($result){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
-                echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book..."/>';
-                echo '<input class="submit" type="submit">';
-                echo "</form>";
                 // Create an HTML table
                 echo "<table>";
                 echo "<tr>";
                     // Dispay the column names
-                    echo "<td>Book Name</td>";
-                    echo "<td>Year</td>";
-                    echo "<td>Genre</td>";
-                    echo "<td>Age Group</td>";
+                    echo "<th>Book Name</th>";
+                    echo "<th>Year</th>";
+                    echo "<th>Genre</th>";
+                    echo "<th>Age Group</th>";
                     echo "</tr>";
                 while($row = $result->fetch_assoc()) {// Loop through the columns array
                     echo "<tr>";
@@ -248,20 +236,16 @@ function searchResults($searchVal){
         if($result){
             // Check if rows exist in selected table
             if($result->num_rows > 0){
-                echo "<form method='post' action=''>";
-                echo '<input class="input" type="text" name="searchBar" placeholder="Search For a Book or Author..."/>';
-                echo '<input class="submit" type="submit">';
-                echo "</form>";
                 // Create an HTML table
                 echo "<table>";
                 echo "<tr>";
                 // Display the column names
-                echo "<td>Book Name</td>";
-                echo "<td>Year</td>";
-                echo "<td>Genre</td>";
-                echo "<td>Age Group</td>";
-                echo "<td>Author</td>";
-                echo "<td>Author Age</td>";
+                echo "<th>Book Name</th>";
+                echo "<th>Year</th>";
+                echo "<th>Genre</th>";
+                echo "<th>Age Group</th>";
+                echo "<th>Author</th>";
+                echo "<th>Author Age</th>";
                 echo "</tr>";
                                     
                 while($row = $result->fetch_assoc()) {// Loop through the columns array
@@ -357,15 +341,26 @@ function changeRecord(){
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styleSheet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet">
     <title></title>
 </head>
 <body>
     <div class="container-parent">
         <div class="flex-container">
-            <div class="flex-col">
-                <?php
-                    addTable();
-                ?>    
+            <h1>Library Catalog</h1>
+            <div class="flex-col" id="catalog">
+                <a href="index.php">Log Out</a>
+                
+                <form method='post' action=''>
+                <input id="searchBar" class="input" type="text" name="searchBar" placeholder="Search For a Book..."/>
+                <input class="submit" type="submit">
+                </form>
+                <div id="table">
+                    <?php
+                        addTable();
+                    ?>                    
+                </div>
             </div>
         </div>
     </div>    

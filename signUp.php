@@ -34,25 +34,27 @@ if(isset($_POST['newUser'])){
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styleSheet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet">
     <title></title>
 </head>
 <body>
     <div class="container-parent">
         <div class="flex-container">
+            <h1>Create a New Account</h1>
             <form class="flex-col" method="post">
-                <h1>Create a New Account</h1>
-                <label for="newUser">Username: </label>
+                <label class="label" for="newUser">Username: </label>
                 <input class="input" name="newUser" type="text" required></br>
                 <p>Account Type: </p>
                 <input name="userType" type="radio" value="Member" required>
                 <label for="userType">Member</label>
                 <input name="userType" type="radio" value="Librarian" >
                 <label for="userType">Librarian</label></br>
-                <label for="password">Password: </label>
+                <label class="label" for="password">Password: </label>
                 <input class="input" name="password" type="password" required></br>
-                <label for="confPassword">Confirm Password: </label>
+                <label class="label" for="confPassword">Confirm Password: </label>
                 <input class="input" name="confPassword" type="password" required></br>
-                <input class="submit" type="submit"><br/>
+                <input class="submit" value="Create Account" type="submit"><br/>
                 <a href="index.php">Return to Sign In</a> 
             </form>                      
         </div>
