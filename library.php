@@ -22,8 +22,6 @@ if(isset($_POST['showBooks'])){
     $_SESSION['openTable'] = $_POST['showMembers'];
 }
 
-var_dump($_SESSION);
-
 function fillTable($sortType='ASC', $sortTarget='book_name'){
     include 'connectServer.php';
     
@@ -134,8 +132,8 @@ function fillTable($sortType='ASC', $sortTarget='book_name'){
                     echo "<input type='hidden' name='order'/>";//used to check if form was posted
                     echo "<tr>";
                     // Display the order options
-                    echo "<td>Order: <input type='submit' value='A-Z' name='authASC'/> <input type='submit' value='Z-A' name='authDESC'/></td>";
-                    echo "<td>Order: <input type='submit' value='ASC' name='authAgeASC'/> <input type='submit' value='DESC' name='authAgeDESC'/></td>";
+                    echo "<td>Order: <input type='submit' value='A-Z' name='nameASC'/> <input type='submit' value='Z-A' name='nameDESC'/></td>";
+                    echo "<td>Order: <input type='submit' value='A-Z' name='membershipASC'/> <input type='submit' value='Z-A' name='membershipDESC'/></td>";
                     echo "</tr>";
                     echo "</form>";
 
@@ -222,7 +220,8 @@ function updateTable(){
     if(isset($_POST["order"])){
         foreach (array_keys($_POST) as $index){
             if(strpos($index,'ASC')==true){
-                switch ($index){
+                if($_SESSION['openTable'] == 'Books'){
+                    switch ($index){
                     case "bookASC":
                         $sortType = 'ASC';
                         $sortTarget = 'books.book_name';
@@ -253,9 +252,37 @@ function updateTable(){
                         $sortTarget = 'authors.age';
                         fillTable($sortType, $sortTarget);
                         break;
+                    }
+                }elseif($_SESSION['openTable'] == 'Authors'){
+                    switch ($index){
+                    case "authASC":
+                        $sortType = 'ASC';
+                        $sortTarget = 'authors.author_name';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    case "authAgeASC":
+                        $sortType = 'ASC';
+                        $sortTarget = 'authors.age';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    }
+                }elseif($_SESSION['openTable'] =='Members'){
+                    switch ($index){
+                    case "nameASC":
+                        $sortType = 'ASC';
+                        $sortTarget = 'members.name';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    case "membershipASC":
+                        $sortType = 'ASC';
+                        $sortTarget = 'members.membership';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    }
                 }
             }elseif(strpos($index,'DESC')==true){
-                switch ($index){
+                if($_SESSION['openTable'] == 'Books'){
+                    switch ($index){
                     case "bookDESC":
                         $sortType = 'DESC';
                         $sortTarget = 'books.book_name';
@@ -286,6 +313,33 @@ function updateTable(){
                         $sortTarget = 'authors.age';
                         fillTable($sortType, $sortTarget);
                         break;
+                    }
+                }elseif($_SESSION['openTable'] == 'Authors'){
+                    switch ($index){
+                    case "authDESC":
+                        $sortType = 'DESC';
+                        $sortTarget = 'authors.author_name';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    case "authAgeDESC":
+                        $sortType = 'DESC';
+                        $sortTarget = 'authors.age';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    }
+                }elseif($_SESSION['openTable'] =='Members'){
+                    switch ($index){
+                    case "nameDESC":
+                        $sortType = 'DESC';
+                        $sortTarget = 'members.name';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    case "membershipDESC":
+                        $sortType = 'DESC';
+                        $sortTarget = 'members.membership';
+                        fillTable($sortType, $sortTarget);
+                        break;
+                    }
                 }
             }
         }
