@@ -14,6 +14,10 @@ function addTable($sortTarget){
     }
 }
 
+if(!isset($_SESSION['openTable'])){
+    $_SESSION['openTable'] = 'Books';
+}
+
 if(isset($_POST['showBooks'])){
     $_SESSION['openTable'] = $_POST['showBooks'];
 }elseif(isset($_POST['showAuthors'])){
