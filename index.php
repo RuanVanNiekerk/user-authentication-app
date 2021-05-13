@@ -35,7 +35,7 @@ if(isset($_POST["user"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styleSheet.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&family=Lato&display=swap" rel="stylesheet">
     <title></title>
 </head>
 <body>    
@@ -43,7 +43,7 @@ if(isset($_POST["user"])){
         <div class="flex-container">
             <h1>The William Gibson Library</h1>
             <form class="flex-col" method="post" action="">
-                <h1>Sign In</h1>
+                <h2>Sign In</h2>
                 <label class="label" for="user">Username: </label>
                 <input class="input" name="user" type="text" required></br>
                 <label class="label" for="password">Password: </label>

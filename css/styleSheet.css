@@ -7,8 +7,17 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+h1, h2 {
+    font-family: 'Girassol', cursive;
+}
+
 h1{
-    font-family: 'Abril Fatface', cursive;
+    font-size: 10vh;
+    color: white;
+}
+
+h2{
+    font-size: 5vh;
 }
 
 table { 
@@ -32,26 +41,26 @@ th{
 }
 
 .submit{
-    background-color: #3A9275;
+    background-color: #FF5600;
     color: white;
     font-size: 1em;
     text-transform: uppercase;
     border-radius: 5px;
-    width: 100%;
+    width: 50%;
     height: 2em;
     margin: 1em 0;
 }
 
 .submit:hover{
     background-color: white;
-    color: #3A9275;
+    color: #FF5600;
 }
 
 .flex-container{
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgb(219,166,87,0.8);
+    background-color: rgb(255,153,0,0.5);
     width: 100%;
     min-height: 100vh;
     max-width: 100%;
@@ -60,8 +69,7 @@ th{
 }
 .flex-col{
     white-space: nowrap;
-    background-color: rgb(219,166,87);
-    border: solid 10px #FF9900;
+    background-color: rgb(255,193,100);
     border-radius: 10px;
     padding: 2em;
     margin: auto;
@@ -70,7 +78,7 @@ th{
 }
 
 #searchBar{
-    border: solid #3A9275;
+    border: solid #9B5D00;
 }
 
 #catalog{
@@ -78,7 +86,7 @@ th{
 }
 
 table,th,td{
-    border: solid 3px White;
+    border: solid 3px #9B5D00;
 }
 
 #table{

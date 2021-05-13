@@ -35,14 +35,14 @@ if(isset($_POST['newUser'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styleSheet.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&family=Lato&display=swap" rel="stylesheet">
     <title></title>
 </head>
 <body>
     <div class="container-parent">
         <div class="flex-container">
-            <h1>Create a New Account</h1>
             <form class="flex-col" method="post">
+                <h2>Create a New Account</h2>
                 <label class="label" for="newUser">Username: </label>
                 <input class="input" name="newUser" type="text" required></br>
                 <p>Account Type: </p>
